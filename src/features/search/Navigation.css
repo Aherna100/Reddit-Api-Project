@@ -1,0 +1,42 @@
+form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.navBar {
+    padding: .5rem;
+    height: 3rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navImg {
+    width: 2rem;
+}
+
+.navSearch {
+    padding: .5rem;
+}
+
+.searchButton {
+    padding: .5rem;
+}
+
+.searchButton:hover {
+    color: black;
+    background-color: white;
+}
+
+.logoContent {
+
+}
+
+.submitContent {
+    margin: 0 auto;
+}

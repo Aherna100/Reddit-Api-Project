@@ -1,0 +1,12 @@
+:root {
+    --border: 1px rgb(157, 157, 157) solid;
+    --border-hover: 1px black solid;
+
+    --hover-color: rgb(196, 196, 196);
+
+    --element-hover: rgb(192, 192, 192);
+
+    --height-options: 2rem;
+
+    --opacity: 70%;
+}

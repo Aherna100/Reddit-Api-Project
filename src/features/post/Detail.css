@@ -1,0 +1,43 @@
+a {
+    
+}
+
+.numComments {
+    margin-left: .2rem;
+}
+
+.commentOption {
+    display: flex;
+    flex-flow: row;
+    padding: .7rem;
+}
+
+.commentOption:hover {
+    background-color: var(--hover-color);
+}
+
+.mainContentDetail {
+    grid-column: 2;
+    border: 1px var(--border-hover) solid;
+    padding: 1rem;
+}
+
+.mainBottom {
+   margin: .7rem auto;
+}
+
+.mainDFooter {
+    display: flex;
+}
+
+.awards {
+    display: flex;
+    overflow: hidden;
+    padding-left: .5rem;
+    flex-flow: row;
+}
+
+.awardIcons {
+    max-height: 1rem;
+    margin-left: .3rem;
+}

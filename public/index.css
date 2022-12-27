@@ -13,72 +13,36 @@ nav {
     padding: 1rem;
 }
 
-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+h1 {
+    font-size: 1.5rem;
 }
 
-h1 {
-    padding: 1rem;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* columns */
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 1rem;
 }
 
 .navBar {
-    padding: .5rem;
-    height: 3rem;
+    grid-column: 1/-1;
 }
 
-.navContent {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+.first {
+    grid-column: 1;
 }
 
-.navImg {
-    width: 2rem;
-    margin-right: .5rem;
+.main {
+    grid-column: 2;
+    max-width: 50rem;
 }
 
-.navSearch {
-    padding: .5rem;
-}
-
-.searchButton {
-    padding: .5rem;
-}
-
-.searchButton:hover {
-    color: black;
-    background-color: white;
-}
-
-.homeItem {
-    width: 23rem;
-    height: 23rem;
-    padding: 1rem;
-    border: 1px black solid;
-}
-
-.mainCon {
-    display: flex;
-}
-
-.mainContent {
-    width: 20rem;
-    height: 20rem;
-    border: 1px black solid;
-}
-
-.mainLeft {
-    margin-right: 1rem;
-    width: 2rem;
-    height: 20rem;
-    border: 1px black solid;
-}
-
-.mainFooter {
-    margin-top: 1rem;
-    width: 23rem;
-    height: 2rem;
-    border: 1px black solid;
+.third {
+    grid-column: 3;
 }

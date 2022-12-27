@@ -1,0 +1,38 @@
+.shareList {
+    position: relative;
+    z-index: 10;
+}
+
+.menu {
+    position: absolute;
+}
+
+.shareList li{
+    width: 6rem;
+    padding: .7rem;
+    display: block;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.shareList li:hover{
+    background-color: var(--hover-color);
+}
+
+.fItem {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.sItem {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.tItem {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
