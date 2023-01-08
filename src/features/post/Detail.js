@@ -1,17 +1,25 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { selectPostById } from "../../store/NavigationSlice";
+import { useLocation, useParams } from 'react-router-dom';
+import { selectPost, selectPostById } from "../../store/NavigationSlice";
 
 import Skeleton from 'react-loading-skeleton';
 import Comments from '../comments/Comments';
 import moment from 'moment';
 import "./Detail.css";
-import shortenNumber from "../../utils/shortenNumber";
+import Footer from "../footer/Footer";
 
-const Detail = () => {
-    const { id } = useParams();
-    const post = useSelector(state => selectPostById(state, id));
+const Detail = (props) => {
+    
+    console.log(props);
+    const id = useParams()
+    const location = useLocation();
+    const post  = location.state; 
+    console.log(id);
+
+
+    const test = useSelector((state) => state.navigation.selectPostById(state, id));
+    console.log(test);
 
     function ShowComment() {
         if (post.loadingComments === "loading") {
@@ -61,18 +69,9 @@ const Detail = () => {
             </div>
             <ImgPost />
             <div className="mainBottom">
-                <div className="mainDFooter">
-                    <div className="commentOption">
-                        <div>
-                            <span className="material-icons">
-                                chat_bubble_outline
-                            </span>
-                        </div>
-                        <div className="numComments">
-                            <h1>{shortenNumber(post.num_comments, 1)} Comments</h1>
-                        </div>
-                    </div>
-                </div>
+                <Footer
+                    post={post}
+                />
             </div>
 
             <div className="comment">

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 import { useSelector, useDispatch } from "react-redux";
 import { selectPost, loadPost, loadComments } from '../../store/NavigationSlice';
-import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
-import Post from "./Post";
-import { Link } from 'react-router-dom';
+
+import Post from "../main/Post";
+import Navigation from "../search/Navigation";
 
 export default function HomePage() {
     const posts = useSelector(selectPost);
@@ -18,31 +19,30 @@ export default function HomePage() {
 
     const commentsLoader = (index) => {
         const testThunk = (permalink) => {
-            dispatch(loadComments({index: index, permalink: permalink}));
+            dispatch(loadComments({ index: index, permalink: permalink }));
         }
         return testThunk;
     }
 
     return (
-        <>
+        <>  
+            <Navigation/>
+
             <div className="first">
 
             </div>
-            {status === "loading" ? <LoadingSpinner /> : (
+            {status === "loading" ? 
+                <Skeleton
+                    height={120}
+                /> : (
                 <div className="main">
                     {posts.map((post, index) => (
-                        <Link
+                        <Post
                             key={post.id}
-                            to={`/${post.id}`}
-                            className={`post${post.title}`}
-                        >
-                            <Post
-                                key={post.id}
-                                post={post}
-                                commentsLoader={commentsLoader(index)}
-                            />
-                        </Link>
-                    ))};
+                            post={post}
+                            commentsLoader={commentsLoader(index)}
+                        />
+                    ))}
                 </div>
             )}
 

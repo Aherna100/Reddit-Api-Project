@@ -22,6 +22,7 @@ a {
     margin-bottom: 2rem;
     align-items: center;
     border-radius: .2rem;
+    width: -webkit-fill-available;
 }
 
 .homeReddit:hover {
@@ -30,7 +31,9 @@ a {
 
 .cardContent {
     display: flex;
-    width: 100%;
+    width: inherit;
+    overflow: hidden;
+    padding: var(--padding-post);
 }
 
 .mainImage {
@@ -39,13 +42,13 @@ a {
 }
 
 .mainContent {
-    width: 100%;
+    width: inherit;
     margin: .5rem .5rem;
     overflow: hidden;
 }
 
 .imageContent {
-    max-height: 30rem;
+    max-width: var(--max-with);
 }
 
 /* Author */
@@ -53,6 +56,12 @@ a {
 .authorContent {
     margin: .2rem .9rem;
     display: flex;
+    flex-flow: row;
+}
+
+.awards img {
+    max-height: 1rem;
+    margin-left: .2rem;
 }
 
 /* Title */
@@ -82,44 +91,6 @@ a {
     margin: .3rem 0;
 }
 
-/* Footer */
-
-.mainFooter {
-    display: flex;
-}
-
-.commentFooter {
-    display: flex;
-    width: 11rem;
-    height: 2rem;
-    padding: .5rem;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.commentFooter:hover {
-    background-color: var(--element-hover);
-}
-
-.shareFooter {
-    display: flex;
-    align-items: center;
-    padding: .5rem;
-    height: 2rem;
-}
-
-.shareFooter:hover {
-    background-color: var(--element-hover);
-}
-
-.saveFooter {
-    display: flex;
-    align-items: center;
-    padding: .5rem;
-    height: 2rem;
-}
-
-.saveFooter:hover {
-    background-color: var(--element-hover);
+.cardLink {
+    width: inherit;
 }

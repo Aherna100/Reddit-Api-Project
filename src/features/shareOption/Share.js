@@ -2,12 +2,12 @@ import "./Share.css";
 
 const Share = () => {
     return (
-        <div className="shareList">
-            <ol className="menu">
+        <div className="dropDownMenu">
+            <ol className="menu" id="menu">
                 <li>
                     <div className="fItem">
                         <div>
-                            <span class="material-icons">
+                            <span className="material-icons">
                                 link
                             </span>
                         </div>
@@ -19,7 +19,7 @@ const Share = () => {
                 <li>
                     <div className="sItem">
                         <div>
-                            <span class="material-icons">
+                            <span className="material-icons">
                                 code
                             </span>
                         </div>
@@ -31,7 +31,7 @@ const Share = () => {
                 <li>
                     <div className="tItem">
                         <div>
-                            <span class="material-icons">
+                            <span className="material-icons">
                                 ios_share
                             </span>
                         </div>

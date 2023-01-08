@@ -8,5 +8,9 @@
 
     --height-options: 2rem;
 
+    --padding-post: .2rem;
+
+    --max-with: 32rem;
+
     --opacity: 70%;
 }

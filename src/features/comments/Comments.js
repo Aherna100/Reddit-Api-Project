@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Comments.css";
 import moment from 'moment';
 import Share from "../shareOption/Share";
 import ReactMarkdown from 'react-markdown';
 import shortenNumbers from '../../utils/shortenNumber';
+import Avatar from "../avatar/Avatar";
+import { useOutsideClick } from "../../utils/clickHandler";
 
 const Comments = (props) => {
 
@@ -24,18 +26,28 @@ const Comments = (props) => {
     }
 
     function shareHandler() {
-        console.log("Handler working");
         setOpen(!open);
     }
 
-    console.log(comment);
+    const shareOutsideHandler = () => {
+        setOpen(false);
+    }
+
+    const ref = useOutsideClick(shareOutsideHandler);
+
     return (
         <div className="commentContainer">
-            <div className="commentTitle">
-                <p className="commentName">{comment.author}</p>
-                <p className="commentTime">{moment.unix(comment.created_utc).fromNow()}</p>
-                <Edited />
+            <div className="commentOverview">
+                <div className="commentAvatar">
+                    <Avatar name={comment.author}/>
+                </div>
+                <div className="commentTitle">
+                    <p className="commentName">{comment.author}</p>
+                    <p className="commentTime">{moment.unix(comment.created_utc).fromNow()}</p>
+                    <Edited />
+                </div>
             </div>
+
             <div className="commentBody">
                 <ReactMarkdown children={comment.body} />
             </div>
@@ -64,10 +76,9 @@ const Comments = (props) => {
                     </div>
                 </div>
                 <div className="Share">
-                    <button onClick={() => shareHandler()}>
+                    <button ref={ref} type="button" onClick={() => shareHandler()}>
                         Share
                     </button>
-                    {open ? <Share/> : ""}
                 </div>
                 <div className="Report">
                     <p>Report</p>
@@ -80,6 +91,7 @@ const Comments = (props) => {
                 </div>
             </div>
 
+            {open ? <Share /> : null}
         </div>
     );
 }

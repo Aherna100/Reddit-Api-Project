@@ -2,6 +2,23 @@
     padding: .5rem;
 }
 
+.commentContainer {
+    padding: .5rem;
+}
+
+.commentOverview {
+    display: flex;
+}
+
+
+.commentAvatar {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* comment Tittle */
+
 .commentTitle {
     display: flex;
     flex-flow: row;
@@ -20,9 +37,7 @@
     opacity: var(--opacity);
 }
 
-.commentContainer {
-    padding: .5rem;
-}
+
 
 .comment {
     border-top: 1px rgb(167, 167, 167) solid;
@@ -33,7 +48,7 @@
 .cardContentComment {
     display: flex;
     flex-flow: row;
-    width: 50%;
+    width: 55%;
     justify-content: space-between;
     opacity: 70%;
     font-size: .8rem;
@@ -57,17 +72,12 @@
     height: var(--height-options);
 }
 
-.Share {
-    padding: .2rem;
-    height: var(--height-options);
-    display: flex;
-    position: relative;
-}
-
 .Share button {
+    width: 2.4rem;
     border: none;
     background: none;
     cursor: pointer;
+    height: 2.4rem;
 }
 
 .Report {

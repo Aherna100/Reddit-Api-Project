@@ -2,7 +2,7 @@ import "./Navigation.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTerm, setSearchTerm, loadPostQuery } from '../../store/NavigationSlice';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
     const [searchLocal, setSearchLocal] = useState('');
@@ -31,10 +31,9 @@ export default function Navigation() {
                     <NavLink
                         to="/"
                         className="nav-link"
-                        >
-                        <img src="reddit-logo.png" alt="reddit logo" className="navImg"/>
+                    >
+                        <img src="reddit-logo.png" alt="reddit logo" className="navImg" />
                     </NavLink>
-                    
                 </div>
 
                 <div className="submitContent">

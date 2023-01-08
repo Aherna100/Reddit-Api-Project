@@ -1,21 +1,21 @@
-.shareList {
-    position: relative;
-    z-index: 10;
+.dropDownMenu {
+    width: auto;
 }
 
 .menu {
+    z-index: 5;
+    display: block;
     position: absolute;
 }
 
-.shareList li{
-    width: 6rem;
+.menu li{
     padding: .7rem;
     display: block;
     background-color: white;
     border: 1px black solid;
 }
 
-.shareList li:hover{
+.menu li:hover{
     background-color: var(--hover-color);
 }
 

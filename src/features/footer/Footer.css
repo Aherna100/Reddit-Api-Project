@@ -1,0 +1,41 @@
+/* Footer */
+
+.mainFooter {
+    display: flex;
+}
+
+.commentFooter {
+    display: flex;
+    width: 11rem;
+    height: 2rem;
+    padding: .5rem;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.commentFooter:hover {
+    background-color: var(--element-hover);
+}
+
+.shareFooter {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    height: 2rem;
+}
+
+.shareFooter:hover {
+    background-color: var(--element-hover);
+}
+
+.saveFooter {
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    height: 2rem;
+}
+
+.saveFooter:hover {
+    background-color: var(--element-hover);
+}
